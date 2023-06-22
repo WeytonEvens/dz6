@@ -38,4 +38,31 @@ public class StatsService {
 
         return maxMonth + 1;
     }
+
+    public int BelowAverageMonths(long[] sales) {
+        int counter = 0;
+
+        for (long sale : sales) {
+            if (sale < average(sales)) {
+                counter++;
+            }
+
+        }
+
+        return counter;
+    }
+
+    public int AboveAverageMonths(long[] sales) {
+        int counter = 0;
+        long average = average(sales);
+
+        for (long sale : sales) {
+            if (sale <= average(sales)) {
+                counter++;
+            }
+
+        }
+
+        return counter;
+    }
 }

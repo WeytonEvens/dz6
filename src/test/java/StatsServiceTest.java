@@ -53,4 +53,28 @@ public class StatsServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void testBelowAverageMonths() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long actual = service.BelowAverageMonths(sales);
+        long expected = 5;
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testAboveAverageMonths() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long actual = service.AboveAverageMonths(sales);
+        long expected = 7;
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 }
